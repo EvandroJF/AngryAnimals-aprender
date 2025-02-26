@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://tdfl8nbqferm" path="res://scenes/Water/water.tscn" id="2_n4cki"]
 
 [node name="Level" type="Node2D"]
+position = Vector2(2, 0)
 script = ExtResource("1_3pgfl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
