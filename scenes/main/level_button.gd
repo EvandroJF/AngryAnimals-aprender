@@ -18,6 +18,7 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
+	ScoreManager.set_level_selected(level_numeber)
 	get_tree().change_scene_to_packed(_level_scene)
 
 
