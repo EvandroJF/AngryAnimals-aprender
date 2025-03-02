@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqq6vbtkvu47l"]
+
+[ext_resource type="Script" path="res://scenes/game_ui/game_ui.gd" id="1_6baha"]
+[ext_resource type="LabelSettings" uid="uid://c84casw30ffiq" path="res://assets/LG_48_gr.tres" id="1_b1e73"]
+[ext_resource type="LabelSettings" uid="uid://jhxwamm8tlti" path="res://assets/LG_96_bl.tres" id="2_6gxmn"]
+[ext_resource type="LabelSettings" uid="uid://00sxq44vpib3" path="res://assets/LG_48_bl.tres" id="3_4psyw"]
+[ext_resource type="AudioStream" uid="uid://bmf7b5ko6t4gb" path="res://assets/audio/jazzyfrenchy.mp3" id="5_5bxxv"]
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_6baha")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VB" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+text = "LEVEL 10"
+label_settings = ExtResource("1_b1e73")
+
+[node name="AttemptsLabel" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+text = "ATTEMPTS 100"
+label_settings = ExtResource("1_b1e73")
+
+[node name="VB2" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VB2"]
+layout_mode = 2
+text = "LEVEL COMPLETE
+"
+label_settings = ExtResource("2_6gxmn")
+
+[node name="Label2" type="Label" parent="MarginContainer/VB2"]
+layout_mode = 2
+text = "press space"
+label_settings = ExtResource("3_4psyw")
+horizontal_alignment = 1
+
+[node name="GamaSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5bxxv")

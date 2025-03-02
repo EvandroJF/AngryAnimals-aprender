@@ -17,7 +17,11 @@ func _ready() -> void:
 	score.text = str(best_sc)
 	_level_scene = load("res://scenes/level/level%s.tscn" % level_numeber)
 
-
+func _process(delta: float) -> void:
+	if is_hovered() == true:
+		scale = HOVER_SCALE
+	else:
+		scale = DEFAULT_SCALE
 
 func _on_pressed() -> void:
 	ScoreManager.set_level_selected(level_numeber)
@@ -25,8 +29,10 @@ func _on_pressed() -> void:
 
 
 func _on_mouse_entered() -> void:
-	scale = HOVER_SCALE
+	#scale = HOVER_SCALE
+	pass
 
 
 func _on_mouse_exited() -> void:
-	scale = DEFAULT_SCALE
+	#scale = DEFAULT_SCALE
+	pass
